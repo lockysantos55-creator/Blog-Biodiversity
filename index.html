@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Biodiversity</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f0;
+            color: #26352b;
+        }
+
+        .cabecalho {
+            background-color: #245c3a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .cabecalho h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .cabecalho p {
+            margin-bottom: 0;
+        }
+
+        .conteudo {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .apresentacao {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .postagens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .postagem {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1 1 280px;
+        }
+
+        .postagem img {
+            width: 100%;
+            max-width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .postagem h2 {
+            color: #245c3a;
+        }
+
+        .botao {
+            background-color: #245c3a;
+            color: white;
+            border: none;
+            padding: 9px 14px;
+            margin: 5px 5px 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #174329;
+        }
+
+        .rodape {
+            background-color: #245c3a;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Blog Biodiversity</h1>
+        <p>Conheça a importância da biodiversidade para o nosso planeta</p>
+    </header>
+
+    <main class="conteudo">
+        <section class="apresentacao">
+            <h2>O que é biodiversidade?</h2>
+            <p>
+                Biodiversidade é a variedade de seres vivos que existem no planeta,
+                incluindo animais, plantas, fungos e microrganismos. Ela é essencial
+                para o equilíbrio da natureza e para a manutenção da vida.
+            </p>
+        </section>
+
+        <section class="postagens">
+            <article class="postagem">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Cervo em uma floresta">
+                <h2>Fauna</h2>
+                <p>
+                    A fauna reúne os animais de uma região. Cada espécie tem um papel
+                    importante nos ecossistemas, ajudando a manter o equilíbrio natural.
+                </p>
+                <button class="botao curtir">Curtir <span>0</span></button>
+                <button class="botao nao-curtir">Não curtir <span>0</span></button>
+            </article>
+
+            <article class="postagem">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Floresta verde">
+                <h2>Flora</h2>
+                <p>
+                    A flora é formada pelas plantas de um ambiente. Ela produz oxigênio,
+                    oferece alimento e abrigo e contribui para a qualidade do solo.
+                </p>
+                <button class="botao curtir">Curtir <span>0</span></button>
+                <button class="botao nao-curtir">Não curtir <span>0</span></button>
+            </article>
+
+            <article class="postagem">
+                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80" alt="Árvores em um ecossistema natural">
+                <h2>Preservação</h2>
+                <p>
+                    Preservar a biodiversidade significa proteger os habitats, evitar
+                    a poluição e usar os recursos naturais de forma responsável.
+                </p>
+                <button class="botao curtir">Curtir <span>0</span></button>
+                <button class="botao nao-curtir">Não curtir <span>0</span></button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Blog Biodiversity - Cuidar da natureza é cuidar da vida.</p>
+    </footer>
+
+    <script>
+        const postagens = document.querySelectorAll(".postagem");
+
+        postagens.forEach(function(postagem) {
+            const botaoCurtir = postagem.querySelector(".curtir");
+            const botaoNaoCurtir = postagem.querySelector(".nao-curtir");
+
+            botaoCurtir.addEventListener("click", function() {
+                const contador = botaoCurtir.querySelector("span");
+                contador.textContent = Number(contador.textContent) + 1;
+            });
+
+            botaoNaoCurtir.addEventListener("click", function() {
+                const contador = botaoNaoCurtir.querySelector("span");
+                contador.textContent = Number(contador.textContent) + 1;
+            });
+        });
+    </script>
+</body>
+</html>
